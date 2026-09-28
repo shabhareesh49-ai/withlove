@@ -48,9 +48,9 @@ export default function MomentsCounter() {
   };
 
   return (
-    <section className="py-16 px-4 relative z-10 max-w-5xl mx-auto">
+    <section className="py-16 sm:py-20 px-4 sm:px-6 relative z-10 w-full max-w-[1200px] mx-auto box-border">
       {/* Header */}
-      <div className="text-center mb-12">
+      <div className="text-center mb-10">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}

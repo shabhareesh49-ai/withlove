@@ -143,10 +143,10 @@ export default function BirthdayCake() {
   };
 
   return (
-    <section className={`py-24 px-4 relative z-10 transition-colors duration-1000 ${
+    <section className={`py-16 sm:py-20 px-4 sm:px-6 relative z-10 w-full max-w-[1200px] mx-auto box-border transition-colors duration-1000 ${
       showCelebration ? "bg-gradient-to-b from-pink-100/50 via-rose-100/40 to-pink-50/50" : ""
     }`}>
-      <div className="max-w-3xl mx-auto text-center">
+      <div className="max-w-2xl mx-auto text-center">
         {/* Playful Intro */}
         <motion.p
           initial={{ opacity: 0, y: 10 }}

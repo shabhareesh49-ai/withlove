@@ -25,9 +25,9 @@ export default function FunnySection() {
   };
 
   return (
-    <section className="py-24 px-4 relative z-10 max-w-5xl mx-auto">
+    <section className="py-16 sm:py-20 px-4 sm:px-6 relative z-10 w-full max-w-[1200px] mx-auto box-border">
       {/* Playful Warning Banner */}
-      <div className="text-center mb-16">
+      <div className="text-center mb-10">
         <motion.div
           initial={{ rotate: -2, scale: 0.95 }}
           whileInView={{ rotate: 0, scale: 1 }}

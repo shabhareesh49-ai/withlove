@@ -79,7 +79,7 @@ export default function AffirmationJar() {
   const activeNote = affirmations[currentIdx];
 
   return (
-    <section className="py-20 px-4 relative z-10 max-w-4xl mx-auto">
+    <section className="py-16 sm:py-20 px-4 sm:px-6 relative z-10 w-full max-w-[1200px] mx-auto box-border">
       {/* Header */}
       <div className="text-center mb-10">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pink-100/90 border border-pink-200 text-pink-700 text-xs font-semibold uppercase tracking-wider mb-3">

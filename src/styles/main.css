@@ -20,11 +20,20 @@
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-* {
+*, ::before, ::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   -webkit-tap-highlight-color: transparent;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  position: relative;
 }
 
 html {
@@ -32,16 +41,24 @@ html {
   font-family: var(--font-sans);
   background-color: #fdf2f8;
   color: #4a154b;
-  overflow-x: hidden;
 }
 
 body {
   min-height: 100vh;
-  position: relative;
   background: radial-gradient(circle at 10% 20%, rgba(254, 242, 242, 0.9) 0%, rgba(253, 242, 248, 0.95) 45%, rgba(245, 243, 255, 0.9) 100%);
-  overflow-x: hidden;
   color: #37203b;
   line-height: 1.6;
+}
+
+img, svg, video, canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+p, span, h1, h2, h3, h4, h5, h6, a, button, blockquote {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: normal;
 }
 
 /* Custom desktop cursor */

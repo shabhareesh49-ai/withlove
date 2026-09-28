@@ -51,7 +51,7 @@ export default function WishCapsule() {
   };
 
   return (
-    <section className="py-20 px-4 relative z-10 max-w-3xl mx-auto">
+    <section className="py-16 sm:py-20 px-4 sm:px-6 relative z-10 w-full max-w-[1200px] mx-auto box-border">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

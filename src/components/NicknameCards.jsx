@@ -22,8 +22,8 @@ export default function NicknameCards() {
   };
 
   return (
-    <section id="nicknames-section" className="py-20 px-4 relative z-10 max-w-5xl mx-auto">
-      <div className="text-center mb-12">
+    <section id="nicknames-section" className="py-16 sm:py-20 px-4 sm:px-6 relative z-10 w-full max-w-[1200px] mx-auto box-border">
+      <div className="text-center mb-10">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-100/80 border border-pink-200 text-pink-700 text-xs font-semibold uppercase tracking-wider mb-3">
           <Sparkles className="w-3.5 h-3.5 text-pink-500" />
           <span>The Three Personas</span>

@@ -72,12 +72,12 @@ export default function SiblingPact() {
   ];
 
   return (
-    <section className="py-24 px-4 relative z-10 max-w-4xl mx-auto print:p-0 print:m-0 print:max-w-none">
+    <section className="py-16 sm:py-20 px-4 sm:px-6 relative z-10 w-full max-w-[1200px] mx-auto box-border print:p-0 print:m-0 print:max-w-none">
       {/* Background ambient blush */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-rose-200/30 blur-[100px] pointer-events-none" />
 
       {/* Header */}
-      <div className="text-center max-w-xl mx-auto mb-12">
+      <div className="text-center max-w-xl mx-auto mb-10">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-100/90 text-pink-700 text-xs font-semibold uppercase tracking-wider mb-4 border border-pink-200/60 shadow-sm">
           <FileCheck className="w-3.5 h-3.5 text-pink-500" />
           <span>Legally Binding Sibling Document 📜</span>

@@ -207,7 +207,7 @@ export default function SisterScratchCard() {
   };
 
   return (
-    <section className="py-24 px-4 relative z-10 max-w-3xl mx-auto">
+    <section className="py-16 sm:py-20 px-4 sm:px-6 relative z-10 w-full max-w-[1200px] mx-auto box-border">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full bg-pink-200/40 blur-3xl pointer-events-none" />
 

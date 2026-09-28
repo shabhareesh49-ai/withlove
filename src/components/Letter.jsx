@@ -54,9 +54,9 @@ export default function Letter() {
   };
 
   return (
-    <section className="py-24 px-4 relative z-10 max-w-4xl mx-auto">
+    <section className="py-16 sm:py-20 px-4 sm:px-6 relative z-10 w-full max-w-[1200px] mx-auto box-border">
       {/* Section Header */}
-      <div className="text-center mb-12">
+      <div className="text-center mb-10">
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}

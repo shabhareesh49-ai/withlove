@@ -8,7 +8,7 @@ export default function Hero({ onScrollDown }) {
   const { hero, photos } = birthdayData;
 
   return (
-    <section className="relative min-h-[92vh] flex flex-col items-center justify-center text-center px-4 py-16 overflow-hidden">
+    <section className="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-4 sm:px-6 py-14 sm:py-20 w-full max-w-[1200px] mx-auto box-border overflow-hidden">
       {/* Soft background ambient gradient blooms */}
       <div className="absolute top-1/4 -left-20 w-80 h-80 rounded-full bg-pink-300/25 blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 -right-20 w-80 h-80 rounded-full bg-purple-300/20 blur-3xl pointer-events-none" />

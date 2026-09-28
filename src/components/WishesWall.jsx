@@ -10,27 +10,27 @@ export default function WishesWall() {
       id: 1,
       sender: "Mom & Dad 🌸",
       note: "Happy Birthday Anku! Stay the kind, lovely, and smiling girl you have always been. May God bless you with health, peace, and endless joy! 🧿🩷",
-      color: "bg-pink-50/90 border-pink-200 text-pink-950",
-      tapeColor: "bg-pink-200/70",
-      rotation: "-rotate-2",
+      color: "bg-[#fff5f7] border-pink-200 text-pink-950",
+      tapeColor: "bg-pink-200/80",
+      tag: "🌸 Family Blessing",
       date: "Birthday Blessings"
     },
     {
       id: 2,
       sender: "Shabrii ❤️",
       note: "To the certified funniest and most precious sister in the universe: keep being the ray of sunshine of this family. Always here for you, Paapu! 🎂🧿",
-      color: "bg-amber-50/90 border-amber-200 text-amber-950",
-      tapeColor: "bg-amber-200/70",
-      rotation: "rotate-2",
+      color: "bg-[#fffdf2] border-amber-200 text-amber-950",
+      tapeColor: "bg-amber-200/80",
+      tag: "❤️ Brother's Note",
       date: "Brother's Note"
     },
     {
       id: 3,
       sender: "Family & Loved Ones ✨",
       note: "Happy Birthday Ankitha! May this new chapter of your life be filled with unforgettable adventures, big laughter, and dreams realized! 🌸✨",
-      color: "bg-purple-50/90 border-purple-200 text-purple-950",
-      tapeColor: "bg-purple-200/70",
-      rotation: "-rotate-1",
+      color: "bg-[#faf5ff] border-purple-200 text-purple-950",
+      tapeColor: "bg-purple-200/80",
+      tag: "✨ Warmest Wishes",
       date: "Warmest Wishes"
     }
   ];
@@ -52,20 +52,24 @@ export default function WishesWall() {
 
   const colorMap = {
     pink: {
-      bg: "bg-pink-50/90 border-pink-200 text-pink-950",
-      tape: "bg-pink-200/70"
+      bg: "bg-[#fff5f7] border-pink-200 text-pink-950",
+      tape: "bg-pink-200/80",
+      tag: "🌸 Pink Blessing"
     },
     amber: {
-      bg: "bg-amber-50/90 border-amber-200 text-amber-950",
-      tape: "bg-amber-200/70"
+      bg: "bg-[#fffdf2] border-amber-200 text-amber-950",
+      tape: "bg-amber-200/80",
+      tag: "☀️ Warm Note"
     },
     purple: {
-      bg: "bg-purple-50/90 border-purple-200 text-purple-950",
-      tape: "bg-purple-200/70"
+      bg: "bg-[#faf5ff] border-purple-200 text-purple-950",
+      tape: "bg-purple-200/80",
+      tag: "💜 Sweet Wish"
     },
     emerald: {
-      bg: "bg-emerald-50/90 border-emerald-200 text-emerald-950",
-      tape: "bg-emerald-200/70"
+      bg: "bg-[#f2fdf7] border-emerald-200 text-emerald-950",
+      tape: "bg-emerald-200/80",
+      tag: "🍃 Evergreen Wish"
     }
   };
 
@@ -82,7 +86,7 @@ export default function WishesWall() {
       note: wishText.trim(),
       color: colorMap[selectedColor].bg,
       tapeColor: colorMap[selectedColor].tape,
-      rotation: Math.random() > 0.5 ? "rotate-2" : "-rotate-2",
+      tag: colorMap[selectedColor].tag,
       date: "Just Now 🩷"
     };
 
@@ -105,62 +109,69 @@ export default function WishesWall() {
   };
 
   return (
-    <section className="py-20 px-4 relative z-10 max-w-5xl mx-auto">
-      {/* Header */}
-      <div className="text-center mb-12">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pink-100/90 border border-pink-200 text-pink-700 text-xs font-semibold uppercase tracking-wider mb-3">
+    <section className="py-16 sm:py-20 px-4 sm:px-6 relative z-10 w-full max-w-[1200px] mx-auto box-border">
+      {/* Header - Strictly Centered */}
+      <div className="text-center max-w-2xl mx-auto mb-10">
+        <div className="inline-flex items-center justify-center gap-2 px-3.5 py-1.5 rounded-full bg-pink-100/90 border border-pink-200 text-pink-700 text-xs font-semibold uppercase tracking-wider mb-3 shadow-sm">
           <Pin className="w-3.5 h-3.5 text-pink-500" />
-          <span>Sticky Notes & Memories</span>
-          <span>💌</span>
+          <span>Sticky Notes & Memories 💌</span>
         </div>
 
-        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-pink-950 mb-3">
+        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-pink-950 mb-3 text-center">
           The Birthday Wishes Wall 📝🌸
         </h2>
 
-        <p className="text-neutral-600 text-xs sm:text-sm max-w-md mx-auto mb-6">
-          Heartfelt notes left for Ankitha on her special day. Tap the button to leave your own warm wish!
+        <p className="text-neutral-600 text-sm sm:text-base max-w-lg mx-auto mb-6 text-center leading-relaxed">
+          Heartfelt notes and blessings left for Ankitha. Tap below to pin your own warm birthday note!
         </p>
 
-        <button
-          onClick={() => setIsModalOpen(true)}
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-bold text-xs sm:text-sm shadow-lg shadow-pink-500/25 transition-all hover:scale-105 active:scale-95"
-        >
-          <MessageSquarePlus className="w-4 h-4 text-white" />
-          <span>Leave a Note for Anku ✍️</span>
-        </button>
+        <div className="flex justify-center">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 via-rose-500 to-pink-600 hover:from-pink-600 hover:to-rose-600 text-white font-bold text-xs sm:text-sm shadow-md shadow-pink-500/25 transition-all hover:scale-105 active:scale-95"
+          >
+            <MessageSquarePlus className="w-4 h-4 text-white shrink-0" />
+            <span>Leave a Note for Anku ✍️</span>
+          </button>
+        </div>
       </div>
 
-      {/* Sticky Notes Board */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-start">
+      {/* Sticky Notes Grid: 1 on mobile, 2 on tablet, 3 on desktop - NEVER OVERLAPPING */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 w-full items-stretch">
         {wishes.map((w, idx) => (
           <motion.div
             key={w.id}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: idx * 0.1, duration: 0.5 }}
-            whileHover={{ scale: 1.03, rotate: 0 }}
-            className={`relative p-6 sm:p-7 rounded-2xl border-2 shadow-lg hover:shadow-2xl transition-all duration-300 ${w.color} ${w.rotation} select-none`}
+            transition={{ delay: idx * 0.08, duration: 0.4 }}
+            className={`relative flex flex-col justify-between p-6 sm:p-7 rounded-2xl border-2 shadow-sm hover:shadow-md transition-shadow duration-300 ${w.color} w-full box-border`}
           >
-            {/* Washi tape on top */}
-            <div className={`absolute -top-3 left-1/2 -translate-x-1/2 w-24 h-5 ${w.tapeColor} border-t border-b border-black/10 backdrop-blur-sm -rotate-1 rounded-sm shadow-sm pointer-events-none`} />
+            {/* Subtle decorative washi tape centered at top */}
+            <div className={`w-20 h-3.5 mx-auto -mt-2 mb-3 ${w.tapeColor} rounded-sm shadow-xs border-b border-black/5 opacity-80`} />
 
-            {/* Top Pin Emblem */}
-            <div className="flex items-center justify-between mb-3 text-xs opacity-75 font-semibold">
-              <span className="font-serif italic">{w.date}</span>
-              <span>🧿</span>
+            {/* Top metadata line with subtle flower / evil eye */}
+            <div className="flex items-center justify-between gap-2 mb-3 text-xs opacity-75 font-semibold">
+              <span className="text-[11px] font-sans text-neutral-500">{w.date}</span>
+              <span className="flex items-center gap-1 text-xs">
+                <span>🌸</span>
+                <span>🧿</span>
+              </span>
             </div>
 
-            {/* Note text */}
-            <p className="font-letter-handwriting text-xl sm:text-2xl leading-relaxed mb-4">
-              "{w.note}"
-            </p>
+            {/* Note content - safe wrapping */}
+            <div className="my-auto py-2">
+              <p className="font-sans text-neutral-800 text-sm sm:text-base leading-relaxed break-words [overflow-wrap:anywhere] [word-break:normal]">
+                "{w.note}"
+              </p>
+            </div>
 
-            {/* Sender Signature */}
-            <div className="pt-2 border-t border-black/5 flex items-center justify-between text-xs font-bold font-serif">
-              <span>With Love,</span>
-              <span className="text-pink-700 text-sm font-script font-bold">{w.sender}</span>
+            {/* Sender signature */}
+            <div className="pt-4 mt-4 border-t border-black/5 flex items-center justify-between text-xs font-semibold">
+              <span className="text-neutral-500">With love,</span>
+              <span className="text-pink-700 font-script text-base sm:text-lg font-bold">
+                {w.sender}
+              </span>
             </div>
           </motion.div>
         ))}
@@ -174,14 +185,14 @@ export default function WishesWall() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setIsModalOpen(false)}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
           >
             <motion.div
-              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              initial={{ scale: 0.95, opacity: 0, y: 15 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              exit={{ scale: 0.95, opacity: 0, y: 15 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative max-w-lg w-full bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-pink-200"
+              className="relative max-w-md w-full bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-pink-200 box-border"
             >
               {/* Close Button */}
               <button
@@ -213,7 +224,7 @@ export default function WishesWall() {
                     value={senderName}
                     onChange={(e) => setSenderName(e.target.value)}
                     placeholder="e.g. Shabrii, Mom, Uncle..."
-                    className="w-full px-4 py-2.5 rounded-xl border border-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-300 text-sm"
+                    className="w-full px-4 py-2.5 rounded-xl border border-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-300 text-sm box-border"
                   />
                 </div>
 
@@ -227,7 +238,7 @@ export default function WishesWall() {
                     value={wishText}
                     onChange={(e) => setWishText(e.target.value)}
                     placeholder="Write your sweet birthday wish for Ankitha... 🩷"
-                    className="w-full px-4 py-2.5 rounded-xl border border-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-300 text-sm leading-relaxed"
+                    className="w-full px-4 py-2.5 rounded-xl border border-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-300 text-sm leading-relaxed box-border"
                   />
                 </div>
 
@@ -236,7 +247,7 @@ export default function WishesWall() {
                   <label className="block text-xs font-bold text-neutral-700 mb-1.5">
                     Sticky Note Color
                   </label>
-                  <div className="flex items-center gap-3">
+                  <div className="flex flex-wrap items-center gap-2">
                     {[
                       { key: 'pink', bg: 'bg-pink-100 border-pink-300', label: 'Pink 🌸' },
                       { key: 'amber', bg: 'bg-amber-100 border-amber-300', label: 'Gold ☀️' },

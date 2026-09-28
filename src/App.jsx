@@ -79,7 +79,7 @@ export default function App() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="relative z-10"
+          className="relative z-10 w-full max-w-full overflow-x-hidden box-border"
         >
           {/* Top Left Candlelight Toggle */}
           <div className="fixed top-4 left-4 z-40">
