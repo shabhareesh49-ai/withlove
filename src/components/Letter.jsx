@@ -136,8 +136,8 @@ export default function Letter() {
         {/* Subtle lined paper watermarks */}
         <div className="absolute inset-0 bg-[radial-gradient(#fbcfe8_1px,transparent_1px)] [background-size:24px_24px] opacity-25 pointer-events-none" />
 
-        {/* Vintage Postmark Stamp Top Right */}
-        <div className="absolute top-6 right-6 sm:top-8 sm:right-8 border-2 border-dashed border-pink-300 rounded-xl px-3 py-1.5 text-center rotate-3 pointer-events-none select-none">
+        {/* Vintage Postmark Stamp Top Right (Desktop/Tablet only to avoid covering text on mobile) */}
+        <div className="hidden sm:block absolute top-6 right-6 sm:top-8 sm:right-8 border-2 border-dashed border-pink-300 rounded-xl px-3 py-1.5 text-center rotate-3 pointer-events-none select-none">
           <span className="block text-[10px] uppercase tracking-widest text-pink-400 font-bold">Express Delivery</span>
           <span className="block text-xs font-serif font-bold text-pink-700">FOR ANKITHA 🩷</span>
         </div>

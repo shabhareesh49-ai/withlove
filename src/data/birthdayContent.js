@@ -36,7 +36,7 @@ export const birthdayData = {
 
   // SCREEN 2: HERO
   hero: {
-    tag: "FOR MY FAVORITE SISTER 🌸",
+    tag: "FOR MY FAVORITE SISTER 🌸🧿",
     headingPrefix: "Happy Birthday,",
     headingName: "Ankitha",
     evilEye: "🧿",
