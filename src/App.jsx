@@ -21,6 +21,7 @@ import MomentsCounter from './components/MomentsCounter';
 import FairyLights from './components/FairyLights';
 import AffirmationJar from './components/AffirmationJar';
 import WishesWall from './components/WishesWall';
+import SiblingPact from './components/SiblingPact';
 import { Flame, Sparkles as SparklesIcon, Moon, Sun } from 'lucide-react';
 import { triggerHaptic } from './utils/audio';
 
@@ -128,6 +129,9 @@ export default function App() {
 
           {/* Interactive Sister Trivia Quiz */}
           <SisterQuiz />
+
+          {/* Sibling Agreement & Lifelong Pact */}
+          <SiblingPact />
 
           {/* Screen 7: Letter from Shabrii */}
           <Letter />

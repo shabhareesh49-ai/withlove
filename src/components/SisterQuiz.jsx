@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Award, CheckCircle2, AlertCircle, ArrowRight, RefreshCw, Sparkles, Heart } from 'lucide-react';
+import { Award, CheckCircle2, AlertCircle, ArrowRight, RefreshCw, Sparkles, Heart, Printer } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { birthdayData } from '../data/birthdayContent';
 import { audioController, triggerHaptic } from '../utils/audio';
@@ -58,6 +58,12 @@ export default function SisterQuiz() {
     setIsAnswered(false);
     setScore(0);
     setIsCompleted(false);
+  };
+
+  const handlePrint = () => {
+    triggerHaptic([30]);
+    audioController.playChime();
+    window.print();
   };
 
   return (
@@ -209,7 +215,15 @@ export default function SisterQuiz() {
               <span>100% Unconditional Love ❤️</span>
             </div>
 
-            <div>
+            <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+              <button
+                onClick={handlePrint}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-pink-600 hover:bg-pink-700 text-white text-xs font-semibold shadow-md shadow-pink-500/25 transition-all"
+              >
+                <Printer className="w-3.5 h-3.5" />
+                <span>Save / Print Diploma 📜</span>
+              </button>
+
               <button
                 onClick={handleRestart}
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-pink-200 text-pink-700 text-xs font-semibold hover:bg-pink-50 shadow-sm transition-all"
