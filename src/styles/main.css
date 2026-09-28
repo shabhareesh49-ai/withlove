@@ -1,0 +1,295 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-blush-50: #fdf2f8;
+  --color-blush-100: #fce7f3;
+  --color-blush-200: #fbcfe8;
+  --color-blush-300: #f472b6;
+  --color-blush-400: #ec4899;
+  --color-blush-500: #db2777;
+  --color-gold: #f59e0b;
+  --color-gold-light: #fef3c7;
+  --color-lavender: #f3e8ff;
+  --color-evil-eye: #0284c7;
+
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-script: 'Dancing Script', 'Caveat', cursive;
+  --font-handwriting: 'Caveat', cursive;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: #fdf2f8;
+  color: #4a154b;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  background: radial-gradient(circle at 10% 20%, rgba(254, 242, 242, 0.9) 0%, rgba(253, 242, 248, 0.95) 45%, rgba(245, 243, 255, 0.9) 100%);
+  overflow-x: hidden;
+  color: #37203b;
+  line-height: 1.6;
+}
+
+/* Custom desktop cursor */
+@media (pointer: fine) {
+  .custom-cursor-active {
+    cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23ec4899' stroke='%23ffffff' stroke-width='1.5'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/></svg>") 12 12, auto;
+  }
+  
+  a, button, [role="button"], .clickable {
+    cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 24 24' fill='%23f59e0b' stroke='%23ffffff' stroke-width='1.5'><path d='M12 2l2.4 7.4H22l-6 4.5 2.3 7.1-6.3-4.6-6.3 4.6 2.3-7.1-6-4.5h7.6z'/></svg>") 13 13, pointer !important;
+  }
+}
+
+/* Glassmorphism Styles */
+.glass-card {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 12px 36px -6px rgba(236, 72, 153, 0.12), 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.glass-card-dark {
+  background: rgba(25, 12, 28, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(244, 114, 182, 0.25);
+  box-shadow: 0 20px 50px rgba(219, 39, 119, 0.25);
+}
+
+.glass-card-parchment {
+  background: linear-gradient(135deg, rgba(255, 253, 245, 0.92) 0%, rgba(255, 245, 250, 0.95) 100%);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(251, 207, 232, 0.6);
+  box-shadow: 0 18px 45px -8px rgba(219, 39, 119, 0.14), 0 4px 14px rgba(245, 158, 11, 0.08);
+}
+
+/* Typography Classes */
+.font-serif-luxury {
+  font-family: var(--font-serif);
+  letter-spacing: -0.01em;
+}
+
+.font-script-handwritten {
+  font-family: var(--font-script);
+}
+
+.font-letter-handwriting {
+  font-family: var(--font-handwriting);
+}
+
+/* Gold Gradient Text */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #b45309 0%, #d97706 30%, #f59e0b 60%, #b45309 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-pink-gradient {
+  background: linear-gradient(135deg, #ec4899 0%, #db2777 50%, #9d174d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Floating animation */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+.animate-float {
+  animation: floatGentle 4s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 38px rgba(236, 72, 153, 0.65), 0 0 15px rgba(245, 158, 11, 0.3);
+  }
+}
+
+.animate-glow {
+  animation: pulseGlow 3s infinite ease-in-out;
+}
+
+/* Subtle sparkle animation */
+@keyframes sparkleTwinkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.15);
+  }
+}
+
+.animate-sparkle {
+  animation: sparkleTwinkle 2.5s infinite ease-in-out;
+}
+
+/* Candle flame flicker */
+@keyframes flameFlicker {
+  0%, 100% {
+    transform: scale(1) skewX(0deg);
+    filter: drop-shadow(0 0 8px #f59e0b);
+  }
+  25% {
+    transform: scale(1.06, 0.95) skewX(2deg);
+    filter: drop-shadow(0 0 12px #fbbf24);
+  }
+  50% {
+    transform: scale(0.96, 1.05) skewX(-2deg);
+    filter: drop-shadow(0 0 7px #f59e0b);
+  }
+  75% {
+    transform: scale(1.03, 1.02) skewX(1deg);
+    filter: drop-shadow(0 0 14px #fde68a);
+  }
+}
+
+.animate-flame {
+  animation: flameFlicker 0.9s infinite ease-in-out;
+  transform-origin: bottom center;
+}
+
+/* Evil eye pulse */
+@keyframes eyeGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px rgba(2, 132, 199, 0.4));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 14px rgba(56, 189, 248, 0.8));
+    transform: scale(1.08);
+  }
+}
+
+.animate-eye-glow {
+  animation: eyeGlow 2.5s infinite ease-in-out;
+}
+
+/* Polaroid Card Effect */
+.polaroid-frame {
+  background: #ffffff;
+  padding: 14px 14px 28px 14px;
+  box-shadow: 0 14px 32px rgba(180, 83, 9, 0.08), 0 8px 24px rgba(219, 39, 119, 0.12);
+  border-radius: 4px;
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.polaroid-frame:hover {
+  transform: translateY(-8px) scale(1.02) !important;
+  box-shadow: 0 20px 42px rgba(219, 39, 119, 0.22), 0 8px 20px rgba(245, 158, 11, 0.15);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fdf2f8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f472b6;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #db2777;
+}
+
+/* Accessibility Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}
+
+/* Print Keepsake Mode */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #1f2937 !important;
+  }
+
+  /* Hide floating controls, audio pills, buttons and particles */
+  .fixed, button, .custom-cursor-active {
+    display: none !important;
+  }
+}
+
+/* Candlelight Twilight Theme */
+.candlelight-active {
+  background: radial-gradient(circle at 50% 15%, #2a092d 0%, #17041b 55%, #0b010c 100%) !important;
+  color: #fdf2f8 !important;
+  transition: background 1s ease, color 1s ease;
+}
+
+.candlelight-active .glass-card {
+  background: rgba(35, 14, 38, 0.78) !important;
+  border-color: rgba(244, 114, 182, 0.25) !important;
+  color: #fdf2f8 !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 20px rgba(244, 114, 182, 0.15) !important;
+}
+
+.candlelight-active h1,
+.candlelight-active h2,
+.candlelight-active h3,
+.candlelight-active .text-pink-950 {
+  color: #ffe4e6 !important;
+  text-shadow: 0 0 16px rgba(251, 207, 232, 0.35);
+}
+
+.candlelight-active p.text-neutral-600,
+.candlelight-active p.text-neutral-700,
+.candlelight-active p.text-neutral-800 {
+  color: #fbcfe8 !important;
+}
+
+/* Fairy Lights Garland animation */
+@keyframes fairyGlow {
+  0%, 100% {
+    opacity: 0.65;
+    filter: drop-shadow(0 0 4px #fbbf24);
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 12px #f59e0b) drop-shadow(0 0 16px #f472b6);
+  }
+}
+
+.fairy-bulb {
+  animation: fairyGlow 2s infinite ease-in-out;
+}
+
+
