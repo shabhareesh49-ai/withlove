@@ -44,7 +44,7 @@ export default function Hero({ onScrollDown }) {
                 alt="Ankitha Portrait"
                 priority={true}
                 placeholderLabel="Ankitha 🩷"
-                placeholderSub="Place ankitha-portrait.jpg in public/images/"
+                placeholderSub="Place ankitha-portrait.jpg in public/images/ or select below"
                 className="w-full h-full"
               />
             </div>

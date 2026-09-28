@@ -170,8 +170,8 @@ export default function MemoryGallery() {
                 <SmartImage
                   src={mem.image}
                   alt={mem.caption}
-                  placeholderLabel={`Memory #${mem.id} 📸`}
-                  placeholderSub={`Place ankitha-shabrii-${mem.id}.jpg in public/images/`}
+                  placeholderLabel={mem.id === 1 ? "Ankitha & Shabrii 🩷" : "Special Moment ✨"}
+                  placeholderSub={mem.id === 1 ? "Place ankitha-shabrii-1.jpg in public/images/ or select below" : "Place ankitha-shabrii-2.jpg in public/images/ or select below"}
                   className="w-full h-full"
                 />
 
@@ -187,8 +187,8 @@ export default function MemoryGallery() {
                   </motion.div>
                 )}
 
-                {/* Hover overlay hint */}
-                <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                {/* Hover overlay hint (pointer-events-none so it never blocks Select Photo button) */}
+                <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
                   <div className="px-3.5 py-1.5 rounded-full bg-white/90 text-pink-800 text-xs font-semibold flex items-center gap-1.5 shadow-lg backdrop-blur-sm">
                     <Maximize2 className="w-3.5 h-3.5 text-pink-600" />
                     <span>View Memory</span>
