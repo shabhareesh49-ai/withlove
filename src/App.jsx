@@ -22,6 +22,7 @@ import FairyLights from './components/FairyLights';
 import AffirmationJar from './components/AffirmationJar';
 import WishesWall from './components/WishesWall';
 import SiblingPact from './components/SiblingPact';
+import SisterScratchCard from './components/SisterScratchCard';
 import { Flame, Sparkles as SparklesIcon, Moon, Sun } from 'lucide-react';
 import { triggerHaptic } from './utils/audio';
 
@@ -126,6 +127,9 @@ export default function App() {
 
           {/* Screen 6: Funny Section */}
           <FunnySection />
+
+          {/* Interactive Birthday Scratch Card */}
+          <SisterScratchCard />
 
           {/* Interactive Sister Trivia Quiz */}
           <SisterQuiz />
