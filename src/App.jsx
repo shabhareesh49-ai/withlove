@@ -23,6 +23,7 @@ import AffirmationJar from './components/AffirmationJar';
 import WishesWall from './components/WishesWall';
 import SiblingPact from './components/SiblingPact';
 import SisterScratchCard from './components/SisterScratchCard';
+import CassetteTape from './components/CassetteTape';
 import { Flame, Sparkles as SparklesIcon, Moon, Sun } from 'lucide-react';
 import { triggerHaptic } from './utils/audio';
 
@@ -124,6 +125,9 @@ export default function App() {
 
           {/* Screen 5: Our Memories (Photo Gallery) */}
           <MemoryGallery />
+
+          {/* Bonus: Vintage Sibling Mixtape Player */}
+          <CassetteTape />
 
           {/* Screen 6: Funny Section */}
           <FunnySection />
